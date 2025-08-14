@@ -1,7 +1,8 @@
-const { combineRgb } = require('@companion-module/base')
-const { SOM, cmd } = require('./consts.js')
+import { combineRgb } from '@companion-module/base'
+import { SOM, cmd } from './consts.js'
+import choices from './choices.js'
 
-module.exports = async function (self) {
+export default async function (self) {
 	self.setFeedbackDefinitions({
 		resumePlay: {
 			name: 'Resume Play',
@@ -16,8 +17,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.resumePlay_feedback,
-					default: '00',
+					choices: choices.resumePlay_feedback,
+					default: choices.resumePlay_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -40,8 +41,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.repeat_feedback,
-					default: '00',
+					choices: choices.repeat_feedback,
+					default: choices.repeat_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -64,8 +65,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.incrPlay_feedback,
-					default: '00',
+					choices: choices.incrPlay_feedback,
+					default: choices.incrPlay_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -88,8 +89,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.remoteLocal_feedback,
-					default: '00',
+					choices: choices.remoteLocal_feedback,
+					default: choices.remoteLocal_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -112,8 +113,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Mode',
-					choices: self.play_feedback,
-					default: '00',
+					choices: choices.play_feedback,
+					default: choices.play_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -136,8 +137,8 @@ module.exports = async function (self) {
 					id: 'status',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.mechaStatus_feedback,
-					default: '00',
+					choices: choices.mechaStatus_feedback,
+					default: choices.mechaStatus_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -174,8 +175,8 @@ module.exports = async function (self) {
 					id: 'error',
 					type: 'dropdown',
 					label: 'Error',
-					choices: self.errorSense_feedback,
-					default: '0-00',
+					choices: choices.errorSense_feedback,
+					default: choices.errorSense_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -198,8 +199,8 @@ module.exports = async function (self) {
 					id: 'caution',
 					type: 'dropdown',
 					label: 'Caution',
-					choices: self.cautionSense_feedback,
-					default: '0-00',
+					choices: choices.cautionSense_feedback,
+					default: choices.cautionSense_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -222,8 +223,8 @@ module.exports = async function (self) {
 					id: 'device',
 					type: 'dropdown',
 					label: 'Device',
-					choices: self.deviceSelect_feedback,
-					default: '00',
+					choices: choices.deviceSelect_feedback,
+					default: choices.deviceSelect_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -246,8 +247,8 @@ module.exports = async function (self) {
 					id: 'playArea',
 					type: 'dropdown',
 					label: 'Play Area',
-					choices: self.playArea_feedback,
-					default: '00',
+					choices: choices.playArea_feedback,
+					default: choices.playArea_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -270,8 +271,8 @@ module.exports = async function (self) {
 					id: 'media',
 					type: 'dropdown',
 					label: 'Status',
-					choices: self.mediaStatus_feedback,
-					default: '00',
+					choices: choices.mediaStatus_feedback,
+					default: choices.mediaStatus_feedback[0].id,
 				},
 			],
 			callback: ({ options }) => {

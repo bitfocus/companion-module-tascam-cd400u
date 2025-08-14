@@ -1,8 +1,9 @@
-const { Regex } = require('@companion-module/base')
-const { SOM, cmd } = require('./consts.js')
+import { Regex } from '@companion-module/base'
+import { SOM, cmd } from './consts.js'
+import choices from './choices.js'
 const padding = '0000'
 
-module.exports = function (self) {
+export default function (self) {
 	self.setActionDefinitions({
 		stop: {
 			name: 'Stop',
@@ -38,8 +39,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Mode',
-					choices: self.search_mode,
-					default: '00',
+					choices: choices.search_mode,
+					default: choices.search_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -62,8 +63,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Mode',
-					choices: self.skip_mode,
-					default: '00',
+					choices: choices.skip_mode,
+					default: choices.skip_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -107,8 +108,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Resume Play Mode',
-					choices: self.resumePlay_mode,
-					default: '00',
+					choices: choices.resumePlay_mode,
+					default: choices.resumePlay_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -134,8 +135,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Repeat Mode',
-					choices: self.repeat_mode,
-					default: '00',
+					choices: choices.repeat_mode,
+					default: choices.repeat_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -161,8 +162,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Mode',
-					choices: self.incrPlay_mode,
-					default: '00',
+					choices: choices.incrPlay_mode,
+					default: choices.incrPlay_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -198,8 +199,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Control Mode',
-					choices: self.remoteLocal_mode,
-					default: '00',
+					choices: choices.remoteLocal_mode,
+					default: choices.remoteLocal_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -225,8 +226,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Play Mode',
-					choices: self.play_mode,
-					default: '00',
+					choices: choices.play_mode,
+					default: choices.play_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -253,8 +254,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Time Mode',
-					choices: self.currentTrackTime_sense,
-					default: '00',
+					choices: choices.currentTrackTime_sense,
+					default: choices.currentTrackTime_sense[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -274,8 +275,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Device',
-					choices: self.deviceSelect_mode,
-					default: '10',
+					choices: choices.deviceSelect_mode,
+					default: choices.deviceSelect_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -303,8 +304,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Device',
-					choices: self.playArea_mode,
-					default: '00',
+					choices: choices.playArea_mode,
+					default: choices.playArea_mode[0].id,
 					tooltip: 'This command is not supported when the media is CD-DA.',
 				},
 			],
@@ -331,8 +332,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Enter',
-					choices: self.enter_mode,
-					default: '01',
+					choices: choices.enter_mode,
+					default: choices.enter_mode[0].id,
 				},
 			],
 			callback: ({ options }) => {
@@ -348,8 +349,8 @@ module.exports = function (self) {
 					type: 'dropdown',
 					id: 'mode',
 					label: 'Back',
-					choices: self.back_mode,
-					default: '01',
+					choices: choices.back_mode,
+					default: choices.back_mode[1].id,
 				},
 			],
 			callback: ({ options }) => {
